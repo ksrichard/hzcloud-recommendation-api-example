@@ -1,4 +1,4 @@
-Recommendation API Example for Hazelcast Cloud
+Recommendation API Example with Hazelcast Cloud
 ----------------------------------------------
 
 This application is a good example for using Hazelcast Cloud.
