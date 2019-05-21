@@ -12,10 +12,17 @@ JDK 8 installed on machine
 
 Usage
 -----
-Clone the repository, go to root directory of your cloned repository and type the following:
-```bash
-./mvnw clean install package && java -jar target/recommendation-api-0.0.1-SNAPSHOT.jar
-```
+- Clone the repository, go to root directory of your cloned repository
+- Update `src/main/resources/application.properties` with your Hazelcast Cloud details (replace all `TODO`)
+  ```properties
+  hazelcast.clusterGroupName=TODO
+  hazelcast.clusterGroupPassword=TODO
+  hazelcast.discoveryToken=TODO
+  ```
+- Build and Start the application
+  ```bash
+  ./mvnw clean install package && java -jar target/recommendation-api-0.0.1-SNAPSHOT.jar
+  ```
 
 Endpoints
 ---------
