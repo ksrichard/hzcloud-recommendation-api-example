@@ -132,8 +132,10 @@ public class ProductService {
             Long productHitCount = productHitCounterMap.get(product.getId());
             productHitCount += 1;
             productHitCounterMap.set(product.getId(), productHitCount);
+            log.info("GLOBAL HIT COUNTER: {} -> {}", product, productHitCount);
         } else {
             productHitCounterMap.put(product.getId(), 1L);
+            log.info("GLOBAL HIT COUNTER: {} -> {}", product, 1L);
         }
     }
 
@@ -216,6 +218,7 @@ public class ProductService {
                                     .build()
                     ).collect(Collectors.toList())
             );
+            log.info("{} - PERSONAL HIT COUNTER: {} -> {}", session.getId(), product.getType(), 1L);
         } else {
 
             // we have values and have product type stored before
@@ -229,6 +232,7 @@ public class ProductService {
                     foundTypeHit.setHitCount(foundTypeHit.getHitCount() + 1);
                     hitsForSession.add(foundTypeHit);
                     typeHits.set(session.getId(), hitsForSession);
+                    log.info("{} - PERSONAL HIT COUNTER: {} -> {}", session.getId(), product.getType(), foundTypeHit);
                 }
             }
 
@@ -239,6 +243,7 @@ public class ProductService {
                         .hitCount(1L)
                         .build());
                 typeHits.set(session.getId(),hitsForSession);
+                log.info("{} - PERSONAL HIT COUNTER: {} -> {}", session.getId(), product.getType(), 1L);
             }
 
         }

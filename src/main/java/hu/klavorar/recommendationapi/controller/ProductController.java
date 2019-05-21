@@ -2,14 +2,12 @@ package hu.klavorar.recommendationapi.controller;
 
 import hu.klavorar.recommendationapi.model.Product;
 import hu.klavorar.recommendationapi.service.ProductService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.WebSession;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Slf4j
 @RestController
 @RequestMapping(value = "/product")
 public class ProductController {
